@@ -46,7 +46,7 @@
 
   
   .left-side {
-    background: url(/assets/img/izquierda-background.png) no-repeat center center;
+    background: url(../img/izquierda-background.png) no-repeat center center;
     background-size: cover;
     height: 95vh;
     width: 30%;
@@ -316,7 +316,7 @@
   .right-side-details {
     padding-top: 110px;
     padding: 130px 30px 10px 30px;
-    background: url(/assets/img/derecha-background.png) no-repeat center center;
+    background: url(../img/derecha-background.png) no-repeat center center;
     background-size: cover;
     height: 85vh; /* Asegúrate de que esta altura sea suficiente */
     display: flex;
