@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
+    <link rel="icon" href="./assets/img/pokeball.png">
     <link rel="stylesheet" href="./assets/styles/style.css">
+
+    <!-- Fuentes -->
+    <script src="https://kit.fontawesome.com/603d097ec5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="poke-container" id="poke-container"></div>
 
     <main class="pokedex">
         <!-- Lado izquierdo de la Pokédex -->
         <section class="left-side">
             <div class="button-indicators">
-                <div class="camera-border">
+                <figure class="camera-border">
                     <div class="camera"></div>
-                </div>
+                </figure>
                 <div class="button-indicators-type">
                     <div id="bulb1" class="circle-type1"></div>
                     <div id="bulb2" class="circle-type2"></div>
@@ -28,52 +33,47 @@
             <div class="left-side-content">
                 <div class="left-side-details">
                     <!-- Pantalla principal de la Pokédex -->
-                    <div class="main-screen" aria-label="Pantalla principal">
-                        <div class="pokemon-info">
-                            <h1 class="poke-name">#007 - Squirtle</h1>
-                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle">
-                            <div class="pokemon-voice">
-                                <div class="button-voice"></div>
-                                <div class="button-voicer">
-                                    <div class="voice"></div>
-                                    <div class="voice"></div>
-                                    <div class="voice"></div>
-                                    <div class="voice"></div>
-                                </div>
-                            </div> 
-                        </div>                                                                     
-                    </div>
+                    <section class="main-screen" aria-label="Pantalla principal">
+                        <header class="pokemon-info2">
+                            <h1 class="poke-name">Choose a Pokemon</h1>
+                            <div id="poke-container" class="poke-container"></div>
+                        </header>
+
+                        
+                    </section>
 
                     <!-- Menú principal de la Pokédex -->
-                    <nav class="main-menu">
+                    <nav class="main-menu" aria-label="Menú principal">
                         <div class="left-container">
                             <!-- Botones de estado -->
-                            <button class="buttons-state" aria-label="Estado de botones">
-                                <div class="random">
-                                    <div id="toggleButton1" class="circle">
-                                        <img src="./assets/img/fa_random.png" alt="Random">
+                            <div>
+                                <div class="buttons-state">
+                                    <div class="random">
+                                        <div id="toggleButton1" class="circle">
+                                            <img src="./assets/svg/fa_random.svg" alt="Random">
+                                        </div>
+                                    </div>
+                                    <div class="searching-buttons">
+                                        <div class="button button1 button-common">
+                                            <p>HABITAD:</p>
+                                            <p>ALL</p>
+                                        </div>
+                                        <div class="button button2 button-common">
+                                            <p>TYPE:</p>
+                                            <p>ALL</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="searching-buttons">
-                                    <div id="toggleButton" class="button button1">
-                                        <p>HABITAD: </p>
-                                        <p>ALL</p>
-                                    </div>
-                                    <div id="toggleButton3" class="button button2">
-                                        <p>TYPE:</p>
-                                        <p>ALL</p>
-                                    </div>
-                                </div>
-                            </button>
-                            <!-- Botones de movimiento -->
-                            <button class="search-bar">
+                            </div>
+                            <!-- Barra de búsqueda -->
+                            <button class="search-bar" aria-label="Barra de búsqueda">
                                 <p>SEARCH A POKEMON</p>
-                                <img src="/assets/img/search.png" alt="Search">
+                                <img src="/assets/svg/search.svg" alt="Search">
                             </button>
                         </div>
                         <!-- Pantalla secundaria -->
                         <div class="secondary-screen">
-                            <img src="./assets/img/Group 22.png"></img>
+                            <img src="./assets/svg/d-pad.svg" alt="Pokédex secundaria">
                         </div>
                     </nav>
                 </div>
@@ -84,37 +84,43 @@
         <div class="separator" aria-hidden="true"></div>
 
         <!-- Lado derecho de la Pokédex -->
-        <div class="right-side">
-            <div class="space"></div>
+        <section class="right-side">
             <div class="right-side-details">
                 <!-- Pantalla de detalles -->
-                <article class="details-screen" aria-label="Pantalla de detalles">
-                    <div class="types">
-                        <div class="type water">Water</div>
+                <article class="details-screen">
+                    <div id="pokemon-details" class="pokemon-details">
+                        <img src="" alt="Pokemon Image">
+                        <div class="info">
+                            <p class="name"></p>
+                            <p class="type"></p>
+                            <p class="weakness"></p>
+                            <div class="measurements"></div>
+                        </div>
                     </div>
-                    <div class="weaknesses">
-                        <div class="weakness electric">Electric</div>
-                        <div class="weakness grass">Grass</div>
                     </div>
-
                 </article>
 
                 <!-- Botones de interacción -->
                 <div class="interaction-buttons" aria-label="Botones de interacción">
-                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Imagen de Squirtle">
                     <div>></div>
-                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Imagen de Squirtle">
                     <div>></div>
-                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Imagen de Squirtle">
                 </div>
                 <nav class="confirmation-buttons" aria-label="Botones de confirmación">
-
                     <aside class="state-buttons">
-                        <p>when it retracts its long neck into its shell, it squirts out water with vigorous force.</p>
+                        <p>When it retracts its long neck into its shell, it squirts out water with vigorous force.</p>
                     </aside>
                     <div class="right-container">
-
-                        <button class="notification-bulb" aria-label="Botones de movimiento"></button>
+                        <div class="button button1 button-common">
+                            <p>TYPE:</p>
+                            <p>ALL</p>
+                        </div>
+                        <div class="button button2 button-common">
+                            <p>TYPE:</p>
+                            <p>ALL</p>
+                        </div>
                     </div>
                 </nav>
 
@@ -126,7 +132,6 @@
                     <div id="bulb3" class="circle-type3"></div>
                 </aside>
             </div>
-        </div>
         </section>
     </main>
 
@@ -134,3 +139,16 @@
 </body>
 
 </html>
+
+
+
+
+<!--                             <div class="pokemon-voice">
+                                <button class="button-voice"></button>
+                                <div class="button-voicer">
+                                    <div class="voice"></div>
+                                    <div class="voice"></div>
+                                    <div class="voice"></div>
+                                    <div class="voice"></div>
+                                </div>
+                            </div> -->
