@@ -1,113 +1,193 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokédex</title>
-  <link rel="icon" href="./assets/img/pokeball.png">
   <link rel="stylesheet" href="./assets/styles/style.css">
-  <script src="https://kit.fontawesome.com/603d097ec5.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Pokedex</title>
 </head>
 
 <body>
 
-  <main class="pokedex">
-    <!-- Lado izquierdo de la Pokédex -->
-    <section class="left-side">
-      <div class="button-indicators">
-        <figure class="camera-border">
-          <div class="camera"></div>
-        </figure>
-        <div class="button-indicators-type">
-          <div id="bulb1" class="circle-type1"></div>
-          <div id="bulb2" class="circle-type2"></div>
-          <div id="bulb3" class="circle-type3"></div>
+  </div>
+  <div id="pokedex-container">
+    <div id="pokedex">
+      <div id="pokedex-left">
+        <div>
+          <div id="circle1">
+            <div id="light-circle1"></div>
+          </div>
+          <div id="circle2" class="circleRed">
+            <div class="light-circle2" id="light-circle2Red"></div>
+          </div>
+          <div id="circle2" class="circleYellow">
+            <div class="light-circle2" id="light-circle2Yellow"></div>
+          </div>
+          <div id="circle2" class="circleGreen">
+            <div class="light-circle2" id="light-circle2Green"></div>
+          </div>
         </div>
-      </div>
-      <div class="left-side-content">
-        <div class="left-side-details">
-          <section class="main-screen main-screen1" aria-label="Pantalla principal">
-            <header class="pokemon-info2">
-              <h1 class="poke-name">Choose a Pokemon</h1>
-            </header>
-          </section>
-          <nav class="main-menu" aria-label="Menú principal">
-            <div class="left-container">
-              <div class="buttons-state">
-                <div class="random">
-                  <div id="toggleButton1" class="circle">
-                    <img src="./assets/svg/fa_random.svg" alt="Random">
-                  </div>
-                </div>
-                <div class="searching-buttons">
-                  <div class="button button1 button-common">
-                    <p>HABITAD:</p>
-                    <p class="selected-option">ALL</p>
-                    <div class="dropdown-content">
-                      <a href="#" onclick="selectOption(this, 'button1')">Forest</a>
-                      <a href="#" onclick="selectOption(this, 'button1')">Cave</a>
-                      <a href="#" onclick="selectOption(this, 'button1')">Mountain</a>
-                    </div>
-                  </div>
-                  <div class="button button2 button-common">
-                    <p>TYPE:</p>
-                    <p class="selected-option">ALL</p>
-                    <div class="dropdown-content">
-                      <a href="#" onclick="selectOption(this, 'button2')">Fire</a>
-                      <a href="#" onclick="selectOption(this, 'button2')">Water</a>
-                      <a href="#" onclick="selectOption(this, 'button2')">Electric</a>
-                    </div>
-                  </div>
+        <div id="screen-row">
+          <div id="screen-border">
+            <div id="top-screen-decoration">
+              <div id="circle3" style="margin-right: 20px"></div>
+              <div id="circle3" style="margin-left: 20px"></div>
+            </div>
+            <div id="screen">
+              <div id="picture-row">
+                <img id="picture" src=https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png>
+              </div>
+              <div id="screen-row-info">
+                <div id="number-pokemon">001</div>
+                <div id="gender-container">
+                  <svg id="male-icon" class="gender-icon gender-active" onclick="setGender('male')" aria-hidden="true"
+                    focusable="false" data-prefix="fas" data-icon="mars" class="svg-inline--fa fa-mars fa-w-12"
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path fill="currentColor"
+                      d="M372 64h-79c-10.7 0-16 12.9-8.5 20.5l16.9 16.9-80.7 80.7c-22.2-14-48.5-22.1-76.7-22.1C64.5 160 0 224.5 0 304s64.5 144 144 144 144-64.5 144-144c0-28.2-8.1-54.5-22.1-76.7l80.7-80.7 16.9 16.9c7.6 7.6 20.5 2.2 20.5-8.5V76c0-6.6-5.4-12-12-12zM144 384c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z">
+                    </path>
+                  </svg>
+                  <svg id="female-icon" class="gender-icon" onclick="setGender('female')" aria-hidden="true"
+                    focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9"
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512">
+                    <path fill="currentColor"
+                      d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z">
+                    </path>
+                  </svg>
                 </div>
               </div>
-              <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search for a Pokémon">
-                <button class="search-button">SEARCH</button>
+            </div>
+            <div id="bottom-screen-decoration">
+              <div id="circle4"></div>
+              <div id="menu-button">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="0.5" x2="22" y2="0.5" stroke="black" />
+                  <line y1="15.5" x2="22" y2="15.5" stroke="black" />
+                  <line y1="10.5" x2="22" y2="10.5" stroke="black" />
+                  <line y1="5.5" x2="22" y2="5.5" stroke="black" />
+                </svg>
+
               </div>
             </div>
-          </nav>
+          </div>
+
+        </div>
+        <div id="name-row">
+          <div id="name-container">
+            <div id="name-screen">
+              Ditto
+            </div>
+            <div id="buttons-container">
+              <div id="button-red" onclick="clickNormalColor()">
+                <div id="light-button-red" class="light on"></div>
+              </div>
+              <div id="button-blue" onclick="clickShinyColor()">
+                <div id="light-button-blue" class="light off"></div>
+              </div>
+            </div>
+            <div id="arrows-container">
+              <div id="cross">
+                <div id="leftcross" onclick="clickLeftRight()">
+                  <div id="leftT"></div>
+                </div>
+                <div id="topcross" onclick="clickUp()">
+                  <div id="upT"></div>
+                </div>
+                <div id="rightcross" onclick="clickLeftRight()">
+                  <div id="rightT"></div>
+                </div>
+                <div id="midcross">
+                  <div id="midCircle"></div>
+                </div>
+                <div id="botcross" onclick="clickBottom()">
+                  <div id="downT"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <div class="separator" aria-hidden="true"></div>
-
-    <!-- Lado derecho de la Pokédex -->
-    <section class="right-side">
-      <div class="right-side-details">
-        <div id="pokemon-details" class="details-screen">
-          <div class="details-column">
-            <div class="stats-container"></div>
-          </div>
+      <div id="pokedex-right">
+        <div id="screen-description-row">
+          <div id="screen-description"></div>
         </div>
-        <section class="main-screen" id="main-screen" aria-label="Pantalla principal">
-          <header class="pokemon-info2">
-            <h1 class="poke-name">Choose a Pokemon</h1>
-            <div id="poke-container" class="poke-container"></div>
-          </header>
-        </section>
-        <nav class="confirmation-buttons" aria-label="Botones de confirmación">
-          <div class="state-buttons">
-            <p id="description">Descripción del Pokémon</p>
-          </div>
-          <div class="right-container">
-            <div class="button button1 button-common">
-              <p>Peso:</p>
-              <p id="weight">0 kg</p>
+        <div id="numbers-buttons-row">
+          <div id="button-0" onclick="clickNumber('0')" class="number-button">0</div>
+          <div id="button-1" onclick="clickNumber('1')" class="number-button">1</div>
+          <div id="button-2" onclick="clickNumber('2')" class="number-button">2</div>
+          <div id="button-3" onclick="clickNumber('3')" class="number-button">3</div>
+          <div id="button-4" onclick="clickNumber('4')" class="number-button">4</div>
+          <div id="button-5" onclick="clickNumber('5')" class="number-button">5</div>
+          <div id="button-6" onclick="clickNumber('6')" class="number-button">6</div>
+          <div id="button-7" onclick="clickNumber('7')" class="number-button">7</div>
+          <div id="button-8" onclick="clickNumber('8')" class="number-button">8</div>
+          <div id="button-9" onclick="clickNumber('9')" class="number-button">9</div>
+        </div>
+        <div id="decoration-buttons">
+          <div id="deco-button"></div>
+          <div id="deco-button"></div>
+        </div>
+        <div id="types-row">
+          <div id="types-container">
+            <div id="type-box" style="border-right: none">
+              <img id="type1" class="type-pokemon" src=https://cdn2.bulbagarden.net/upload/7/74/GrassIC_Big.png>
             </div>
-            <div class="button button2 button-common">
-              <p>Altura:</p>
-              <p id="height">0 m</p>
+            <div id="type-box">
+              <img id="type2" class="type-pokemon" src=https://cdn2.bulbagarden.net/upload/3/3d/PoisonIC_Big.png>
             </div>
           </div>
-        </nav>
+          <div id="deco-light"></div>
+        </div>
+        <div id="extra-info-pokemon-row">
+          <div class="extra-info-screen" id="extra-info-screen-1">Height: 10</div>
+          <div class="extra-info-screen" id="extra-info-screen-2">Weight: 29</div>
+        </div>
       </div>
-    </section>
-  </main>
+      <svg id="mid-cilinder" width="54" height="456" viewBox="0 0 54 456" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_250_2)">
+          <path
+            d="M4 3.70732C4 3.70732 17.8401 0 27 0C36.1599 0 50 3.70732 50 3.70732V444.878C50 444.878 36.1599 441.171 27 441.171C17.8401 441.171 4 444.878 4 444.878V3.70732Z"
+            fill="#DC0A2D" />
+          <path
+            d="M49 4.48123V443.589C48.6919 443.513 48.3328 443.424 47.9289 443.327C46.4789 442.977 44.45 442.511 42.1323 442.044C37.5151 441.115 31.6843 440.171 27 440.171C22.3157 440.171 16.4849 441.115 11.8677 442.044C9.55003 442.511 7.52106 442.977 6.07111 443.327C5.66722 443.424 5.30809 443.513 5 443.589V4.48122C5.38364 4.38368 5.90543 4.25329 6.54016 4.10016C7.97147 3.75485 9.975 3.29436 12.2623 2.834C16.8552 1.90961 22.5243 1 27 1C31.4757 1 37.1448 1.90961 41.7377 2.834C44.025 3.29436 46.0285 3.75485 47.4598 4.10016C48.0946 4.25329 48.6164 4.38368 49 4.48123Z"
+            stroke="black" stroke-width="2" />
+        </g>
+        <path d="M6.29999 64.8781C6.29999 64.8781 18.8664 63.0244 27 63.0244C35.1336 63.0244 47.7 64.8781 47.7 64.8781"
+          stroke="black" stroke-width="2" />
+        <path d="M6.29999 72.2927C6.29999 72.2927 18.8664 70.439 27 70.439C35.1336 70.439 47.7 72.2927 47.7 72.2927"
+          stroke="black" stroke-width="2" />
+        <path d="M6.29999 368.878C6.29999 368.878 18.8664 367.024 27 367.024C35.1336 367.024 47.7 368.878 47.7 368.878"
+          stroke="black" stroke-width="2" />
+        <path d="M6.29999 376.293C6.29999 376.293 18.8664 374.439 27 374.439C35.1336 374.439 47.7 376.293 47.7 376.293"
+          stroke="black" stroke-width="2" />
+        <mask id="path-7-inside-1_250_2" fill="white">
+          <path
+            d="M50 444.878C50 441.928 47.5768 439.099 43.2635 437.014C38.9501 434.928 33.1 433.756 27 433.756C20.9 433.756 15.0499 434.928 10.7365 437.014C6.42321 439.099 4 441.928 4 444.878L27 444.878H50Z" />
+        </mask>
+        <path
+          d="M50 444.878C50 441.928 47.5768 439.099 43.2635 437.014C38.9501 434.928 33.1 433.756 27 433.756C20.9 433.756 15.0499 434.928 10.7365 437.014C6.42321 439.099 4 441.928 4 444.878L27 444.878H50Z"
+          fill="#89061C" stroke="black" stroke-width="4" mask="url(#path-7-inside-1_250_2)" />
+        <defs>
+          <filter id="filter0_d_250_2" x="0" y="0" width="54" height="452.878" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_250_2" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_250_2" result="shape" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+
 
   <script src="script.js"></script>
 </body>
